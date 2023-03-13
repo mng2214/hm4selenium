@@ -23,15 +23,17 @@ public class TestCase1 extends TestBaseUITestPractice {
     @Test
     public void testCase1() throws InterruptedException {
 
-        SelectPage selectPage = new SelectPage();
-
+        SelectPage selectPage = new SelectPage(driver);
         selectPage.indiaIsSelectedValidation("India");
-
         selectPage.dropdownSizeValidation(driver);
-
-        selectPage.dropdownsCountryValidation("India", "United States of America", "China", "England");
-
+        selectPage.dropdownsCountryValidation("India", "United states of America", "China", "England");
         selectPage.selectFuncValidation();
+    }
+
+    @Test
+    public void testCase2(){
+        SelectPage selectPage = new SelectPage(driver);
 
     }
+
 }
