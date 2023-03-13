@@ -30,7 +30,6 @@ public class DriverHelper {
                     options.merge(cp);
                     driver = new ChromeDriver(options);
 
-
                     break;
                 case "firefox":
                     WebDriverManager.chromedriver().setup();

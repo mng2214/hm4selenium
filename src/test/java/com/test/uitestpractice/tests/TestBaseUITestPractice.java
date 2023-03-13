@@ -15,6 +15,7 @@ public class TestBaseUITestPractice {
         driver.get("http://uitestpractice.com/Students/Select#");
     }
 
+
     @AfterMethod
     public void tearDown()  {
         driver.quit();
