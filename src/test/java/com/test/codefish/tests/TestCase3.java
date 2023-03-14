@@ -2,6 +2,7 @@ package com.test.codefish.tests;
 
 import com.test.codefish.pages.LaboratoryPage;
 import com.test.codefish.pages.LoginPage;
+import com.test.codefish.pages.RegisterPatientPage;
 import org.testng.annotations.Test;
 
 public class TestCase3 extends TestBaseCodefish {
@@ -28,8 +29,13 @@ Find the John johns patient and validate his identifieris unic
         laboratoryPage.laboratoryPageValidation();
         laboratoryPage.switchToPharmacy();
         laboratoryPage.johnJohnsSearch("John Johns");
-
     }
 
-
+    @Test
+    public void testCase3_1() throws InterruptedException {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login("admin","Admin123");  //username:admin -- password: Admin123
+        RegisterPatientPage registerPatientPage = new RegisterPatientPage(driver);
+        registerPatientPage.registerPatient("Artur","Mng", "M", "1" ,"1993", "2200 E Devon ave" ,"Des Plains" ,"IL","cook", "60018","996 52 18 0592", "delete", "Reason cannot be empty");
+    }
 }
