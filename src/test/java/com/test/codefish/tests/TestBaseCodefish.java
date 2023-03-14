@@ -11,7 +11,7 @@ public class TestBaseCodefish {
     @BeforeMethod
     public void setup(){
         driver = DriverHelper.getDriver();
-        driver.get("http://uitestpractice.com/Students/Select#");
+        driver.get("http://codefish.ninja/openmrs/login.htm");
     }
 
 

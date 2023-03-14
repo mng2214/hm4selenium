@@ -58,8 +58,6 @@ public class TestCase1 extends TestBaseUITestPractice {
         selectPage.selectAllCountriesAndValidateIfDisplayed();
         selectPage.deselectChinaAndEngland();
 
-
-
     }
 
 }
