@@ -88,19 +88,19 @@ public class RegisterPatientPage {
     @FindBy(xpath = "//div[@class='logo']")
     WebElement homePageButton;
 
-    @FindBy (linkText = "Find Patient Record")
+    @FindBy(linkText = "Find Patient Record")
     WebElement findPatientButton;
 
-    @FindBy (xpath = "//input[@id='patient-search']")
+    @FindBy(xpath = "//input[@id='patient-search']")
     WebElement searchButton;
 
     @FindBy(xpath = "//tr[1]/td[1]")
     WebElement newPatientClickInSearch;
 
-    @FindBy (id = "org.openmrs.module.coreapps.deletePatient")
+    @FindBy(xpath = "//a[@id ='org.openmrs.module.coreapps.deletePatient']//i")
     WebElement deleteButton;
 
-    @FindBy (css = "#delete-reason")
+    @FindBy(css = "#delete-reason")
     WebElement reasonDelete;
 
     @FindBy(xpath = "//div[@id='delete-patient-creation-dialog']//button[.='Confirm']")
@@ -144,25 +144,18 @@ public class RegisterPatientPage {
 
         homePageButton.click();
         findPatientButton.click();
-        searchButton.sendKeys(givenName+" "+familyName);
-        Thread.sleep(1000);
-        Actions actions = new Actions(driver);
-        actions.moveToElement(newPatientClickInSearch).doubleClick().perform();
-        Thread.sleep(2000);
+        searchButton.sendKeys(givenName + " " + familyName);
 
-       actions.moveToElement(deleteButton).click().perform();
-        Assert.assertTrue(BrowserUtils.getText(deleteErrorMessage).contains(expectedErrorMsg));
+        Actions actions = new Actions(driver);
+        Thread.sleep(1000);
+        actions.moveToElement(newPatientClickInSearch).doubleClick().perform();
+
+        deleteButton.click();
+        confirmDeleteButton.click();
+
+        Assert.assertEquals(BrowserUtils.getText(deleteErrorMessage), expectedErrorMsg);
 
         this.reasonDelete.sendKeys(reasonDelete);
         confirmDeleteButton.click();
-
-
-
-
-
-
-
     }
-
-
 }

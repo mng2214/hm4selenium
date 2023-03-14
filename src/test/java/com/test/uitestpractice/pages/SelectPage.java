@@ -3,6 +3,7 @@ package com.test.uitestpractice.pages;
 import com.beust.ah.A;
 import com.test.uitestpractice.tests.TestBaseUITestPractice;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -108,6 +109,7 @@ public class SelectPage extends TestBaseUITestPractice {
         select.selectByValue("china");
         select.selectByValue("england");
         Thread.sleep(1000);
+
 
         Assert.assertTrue(chinaMultiSelect.isSelected() && chinaMultiSelect.isSelected());
         Assert.assertTrue(englandMultiSelect.isSelected() && englandMultiSelect.isSelected());
