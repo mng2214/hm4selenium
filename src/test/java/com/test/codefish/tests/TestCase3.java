@@ -2,10 +2,9 @@ package com.test.codefish.tests;
 
 import com.test.codefish.pages.LaboratoryPage;
 import com.test.codefish.pages.LoginPage;
-import com.test.uitestpractice.tests.TestBaseUITestPractice;
 import org.testng.annotations.Test;
 
-public class TestCase1 extends TestBaseCodefish {
+public class TestCase3 extends TestBaseCodefish {
 
     /*
     Navigate to "http://codefish.ninja/openmrs/login.htm"
@@ -22,13 +21,14 @@ Select Find patient record
 Find the John johns patient and validate his identifieris unic
      */
     @Test
-    public void testCase1 () throws InterruptedException {
+    public void testCase3() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("admin","Admin123");  //username:admin -- password: Admin123
         LaboratoryPage laboratoryPage = new LaboratoryPage(driver);
         laboratoryPage.laboratoryPageValidation();
         laboratoryPage.switchToPharmacy();
-        Thread.sleep(2000);
+        laboratoryPage.johnJohnsSearch("John Johns");
+
     }
 
 
