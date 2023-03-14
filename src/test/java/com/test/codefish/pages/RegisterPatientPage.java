@@ -12,7 +12,7 @@ import utils.BrowserUtils;
 
 public class RegisterPatientPage {
 
-    WebDriver driver;
+    public WebDriver driver;
 
     public RegisterPatientPage(WebDriver driver) {
         this.driver = driver;
