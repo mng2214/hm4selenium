@@ -157,5 +157,6 @@ public class RegisterPatientPage {
 
         this.reasonDelete.sendKeys(reasonDelete);
         confirmDeleteButton.click();
+
     }
 }
